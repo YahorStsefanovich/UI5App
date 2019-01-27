@@ -5,19 +5,24 @@
                 <items>
                     <ObjectListItem title="{people>UserName}">
 
-                            <attributes>
-                                    <ObjectAttribute text="First name: {people>FirstName}"/>
-                                    <ObjectAttribute text="Last name: {people>LastName}"/>
-                                    <ObjectAttribute text="Middle name: {people>MiddleName}"/>
-                                    <ObjectAttribute text="Gender: {people>Gender}"/>
-                                    <ObjectAttribute text="Age: {people>Age}"/>
-                                    <ObjectAttribute text="Favorite feature: {people>FavoriteFeature}"/>
-                                    <ObjectAttribute text="HomeAddress: {people>HomeAddress}"/>
-                            </attributes>
+                        <attributes>
+                            <ObjectAttribute text="First name: {people>FirstName}"/>
+                            <ObjectAttribute text="Last name: {people>LastName}"/>
+                            <ObjectAttribute text="Middle name: {people>MiddleName}"/>
+                            <ObjectAttribute text="Gender: {people>Gender}"/>
+                            <ObjectAttribute text="Age: {people>Age}"/>
+                            <ObjectAttribute text="Favorite feature: {people>FavoriteFeature}"/>
+                            <ObjectAttribute text="HomeAddress: {= ${people>HomeAddress} === null ? 'none' : ${people>HomeAddress} }"/>
+                            <ObjectAttribute text="Emails: {people>Emails}"/>
+                            <ObjectAttribute text="Features: {people>Features}"/>
+                            <ObjectAttribute text="Address Info: {people>AddressInfo/0/Address}, {people>AddressInfo/0/City/Name},
+                             {people>AddressInfo/0/City/CountryRegion}, {people>AddressInfo/0/City/Region}"/>
+
+                        </attributes>
 
                     </ObjectListItem>
                 </items>
-            </List>
+                </List>
         </content>
     </Panel>
 </core:FragmentDefinition>
