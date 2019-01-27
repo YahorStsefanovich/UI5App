@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+    <Panel headerText="{i18n>panelTitle}" class="sapUiResponsiveMargin" width="auto">
+        <content>
+            <List headerText="{i18n>listTitle}" items="{people>/value}">
+                <items>
+                    <ObjectListItem title="{people>UserName}">
+
+                            <attributes>
+                                    <ObjectAttribute text="First name: {people>FirstName}"/>
+                                    <ObjectAttribute text="Last name: {people>LastName}"/>
+                                    <ObjectAttribute text="Middle name: {people>MiddleName}"/>
+                                    <ObjectAttribute text="Gender: {people>Gender}"/>
+                                    <ObjectAttribute text="Age: {people>Age}"/>
+                                    <ObjectAttribute text="Favorite feature: {people>FavoriteFeature}"/>
+                                    <ObjectAttribute text="HomeAddress: {people>HomeAddress}"/>
+                            </attributes>
+
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+    </Panel>
+</core:FragmentDefinition>
