@@ -1,7 +1,8 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/core/UIComponent"
-], function(Controller, UIComponent) {
+    "sap/ui/core/UIComponent",
+    "sap/ui/core/routing/History"
+], function(Controller, UIComponent, History) {
     "use strict";
 
     return Controller.extend("UI5App.controller.Main", {
@@ -15,6 +16,17 @@ sap.ui.define([
         onPress: function (oEvent) {
             var oRouter = UIComponent.getRouterFor(this);
             oRouter.navTo("detail");
+        },
+        onNavBack: function () {
+            var oHistory = History.getInstance();
+            var sPreviousHash = oHistory.getPreviousHash();
+
+            if (sPreviousHash !== undefined) {
+                window.history.go(-1);
+            } else {
+                var oRouter = UIComponent.getRouterFor(this);
+                oRouter.navTo("home", {}, true);
+            }
         }
     });
 });

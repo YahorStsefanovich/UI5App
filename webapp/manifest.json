@@ -1,5 +1,5 @@
 {
-  "_version": "1.8.0",
+  "_version": "1.12.0",
   "sap.app": {
     "id": "UI5App",
     "type": "application",
@@ -63,7 +63,8 @@
         "viewType": "XML",
         "viewPath": "UI5App.view",
         "controlId": "app",
-        "controlAggregation": "pages"
+        "controlAggregation": "pages",
+        "async": true
       },
       "routes": [
         {
@@ -78,9 +79,9 @@
         }
       ],
       "targets": {
-        "overview": {
+        "home": {
           "viewID": "home",
-          "viewName": "Home"
+          "viewName": "Main"
         },
         "detail": {
           "viewId": "detail",
