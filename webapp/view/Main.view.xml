@@ -1,10 +1,15 @@
 <mvc:View controllerName="UI5App.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
           displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
-    <App>
+    <App id="app">
         <pages>
-            <Page title="{i18n/header}">
+            <Page id="home" title="{i18n/header}">
                 <content>
                     <core:Fragment id="idXmlFrag" fragmentName="UI5App.fragment.Person" type="XML"/>
+                </content>
+            </Page>
+            <Page id="detail">
+                <content>
+                    <mvc:XMLView viewName="UI5App.view.Detail"/>
                 </content>
             </Page>
         </pages>

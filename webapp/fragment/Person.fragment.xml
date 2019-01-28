@@ -4,7 +4,9 @@
             <List headerText="{i18n>listTitle}" items="{people>/value}">
                 <items>
                     <ObjectListItem title="{people>UserName}"
-                        number="Age {= ${people>Age} === null ? 'unknown' : ${people>Age} }">
+                                    number="Age {= ${people>Age} === null ? 'unknown' : ${people>Age} }"
+                                    type="Navigation"
+                                    press="onPress">
 
                         <attributes>
                             <ObjectAttribute text="First name: {people>FirstName}"/>
