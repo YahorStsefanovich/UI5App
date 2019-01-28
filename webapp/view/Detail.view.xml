@@ -5,12 +5,11 @@
         xmlns:f="sap.ui.layout.form"
         xmlns:core="sap.ui.core"
         xmlns:mvc="sap.ui.core.mvc">
-    <Page title="detail"
+    <Page title="{i18n>detailViewHeader}"
           navButtonPress="onNavBack"
           showNavButton="true">
         <content>
-            <Panel id="personDetailsPanel" headerText="persons" class="sapUiResponsiveMargin" width="auto">
-
+            <Panel id="personDetailsPanel" headerText="{people>UserName}" class="sapUiResponsiveMargin" width="auto">
 
                 <l:verticallayout id="containerLayout"  class="sapUiSmallMargin" width="100%">
                     <l:content>
@@ -21,7 +20,7 @@
                         <Input value="{people>LastName}" />
 
                         <Label text="Middle name" />
-                        <Input value="{people>MiddleName}" />
+                        <Input value="{= ${people>MiddleName} === null ? 'none' : ${people>MiddleName} }" />
 
                         <Label text="Gender" />
                         <Input value="{people>Gender}" />
@@ -39,8 +38,7 @@
                         <Input value="{= ${people>Features}.length===0 ? 'none' : ${people>Features} }" />
 
                         <Label text="Address Info" />
-                        <Input value="{people>AddressInfo/0/Address}, {people>AddressInfo/0/City/Name},
-                             {people>AddressInfo/0/City/CountryRegion}, {people>AddressInfo/0/City/Region}" />
+                        <Input value="{people>AddressInfo/0/Address}, {people>AddressInfo/0/City/Name}, {people>AddressInfo/0/City/CountryRegion}, {people>AddressInfo/0/City/Region}" />
                     </l:content>
                 </l:verticallayout>
             </Panel>
