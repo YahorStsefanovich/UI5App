@@ -13,8 +13,8 @@
                             <ObjectAttribute text="Gender: {people>Gender}"/>
                             <ObjectAttribute text="Favorite feature: {people>FavoriteFeature}"/>
                             <ObjectAttribute text="HomeAddress: {= ${people>HomeAddress} === null ? 'none' : ${people>HomeAddress} }"/>
-                            <ObjectAttribute text="Emails: {people>Emails}"/>
-                            <ObjectAttribute text="Features: {people>Features}"/>
+                            <ObjectAttribute text="Emails: {= ${people>Emails}.length===0 ? 'none' : ${people>Emails} }"/>
+                            <ObjectAttribute text="Features: {= ${people>Features}.length===0 ? 'none' : ${people>Features} }"/>
                             <ObjectAttribute text="Address Info: {people>AddressInfo/0/Address}, {people>AddressInfo/0/City/Name},
                              {people>AddressInfo/0/City/CountryRegion}, {people>AddressInfo/0/City/Region}"/>
 

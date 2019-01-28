@@ -65,8 +65,12 @@
         "controlId": "app",
         "controlAggregation": "pages"
       },
-      "routes": [],
-      "targets": []
+      "routes": [
+
+      ],
+      "targets": {
+
+      }
     },
     "resources": {
       "css": [{
