@@ -73,7 +73,7 @@
           "target": "home"
         },
         {
-          "pattern": "detail",
+          "pattern": "detail/{personPath}",
           "name": "detail",
           "target": "detail"
         }

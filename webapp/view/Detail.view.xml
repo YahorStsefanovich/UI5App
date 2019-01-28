@@ -1,5 +1,5 @@
 <mvc:View
-        controllerName="UI5App.controller.Main"
+        controllerName="UI5App.controller.Detail"
         xmlns="sap.m"
         xmlns:l="sap.ui.layout"
         xmlns:f="sap.ui.layout.form"
@@ -10,13 +10,39 @@
           showNavButton="true">
         <content>
             <Panel id="personDetailsPanel" headerText="persons" class="sapUiResponsiveMargin" width="auto">
-                <l:Grid defaultSpan="L3 M6 S12" containerQuery="true">
-                    <Label text="1" />
-                    <Input value="1" />
 
-                    <Label text="1" />
-                    <Input value="1" />
-                </l:Grid>
+
+                <l:verticallayout id="containerLayout"  class="sapUiSmallMargin" width="100%">
+                    <l:content>
+                        <Label text="First name" />
+                        <Input value="{people>FirstName}" />
+
+                        <Label text="Last name" />
+                        <Input value="{people>LastName}" />
+
+                        <Label text="Middle name" />
+                        <Input value="{people>MiddleName}" />
+
+                        <Label text="Gender" />
+                        <Input value="{people>Gender}" />
+
+                        <Label text="Favorite feature" />
+                        <Input value="{people>FavoriteFeature}" />
+
+                        <Label text="HomeAddress" />
+                        <Input value="{= ${people>HomeAddress} === null ? 'none' : ${people>HomeAddress} }" />
+
+                        <Label text="Emails" />
+                        <Input value="{= ${people>Emails}.length===0 ? 'none' : ${people>Emails} }" />
+
+                        <Label text="Features" />
+                        <Input value="{= ${people>Features}.length===0 ? 'none' : ${people>Features} }" />
+
+                        <Label text="Address Info" />
+                        <Input value="{people>AddressInfo/0/Address}, {people>AddressInfo/0/City/Name},
+                             {people>AddressInfo/0/City/CountryRegion}, {people>AddressInfo/0/City/Region}" />
+                    </l:content>
+                </l:verticallayout>
             </Panel>
         </content>
     </Page>

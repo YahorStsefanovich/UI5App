@@ -1,8 +1,7 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/core/UIComponent",
-    "sap/ui/core/routing/History"
-], function(Controller, UIComponent, History) {
+    "sap/ui/core/UIComponent"
+], function(Controller, UIComponent) {
     "use strict";
 
     return Controller.extend("UI5App.controller.Main", {
@@ -14,19 +13,11 @@ sap.ui.define([
             this.getView().setModel(oModel, "people");
         },
         onPress: function (oEvent) {
+            var oItem = oEvent.getSource();
             var oRouter = UIComponent.getRouterFor(this);
-            oRouter.navTo("detail");
-        },
-        onNavBack: function () {
-            var oHistory = History.getInstance();
-            var sPreviousHash = oHistory.getPreviousHash();
-
-            if (sPreviousHash !== undefined) {
-                window.history.go(-1);
-            } else {
-                var oRouter = UIComponent.getRouterFor(this);
-                oRouter.navTo("home", {}, true);
-            }
+            oRouter.navTo("detail", {
+                personPath: oItem.getBindingContext("people").getPath().substr(1).replace(/\//,".")
+            });
         }
     });
 });
